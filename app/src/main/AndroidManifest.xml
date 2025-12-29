@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyCoffeeQuins">
+        <activity
+            android:name=".customer.CustomerOrderActivity"
+            android:exported="false" />
+        <!-- LOGIN CUSTOMER (HALAMAN AWAL / LAUNCHER) -->
+        <activity
+            android:name=".customer.LoginCustomerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- CUSTOMER -->
+        <activity android:name=".customer.RegisterCustomerActivity" />
+        <activity android:name=".customer.CustomerDashboardActivity" />
+        <activity android:name=".customer.MenuListActivity" />
+        <activity android:name=".customer.MenuDetailActivity" />
+        <activity android:name=".customer.CartActivity" />
+        <activity android:name=".customer.CheckoutActivity" />
+        <activity android:name=".customer.OrderSuccessActivity" /> <!-- KASIR -->
+        <activity android:name=".kasir.LoginKasirActivity" />
+        <activity android:name=".kasir.KasirDashboardActivity" />
+        <activity android:name=".kasir.OrderListActivity" />
+        <activity android:name=".kasir.OrderDetailActivity" />
+        <activity android:name=".kasir.ManageMenuActivity" />
+        <activity android:name=".kasir.EditMenuActivity" />
+    </application>
+
+</manifest>
