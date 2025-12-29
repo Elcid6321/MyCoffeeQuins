@@ -13,32 +13,17 @@
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#6F4E37"
-        android:layout_marginBottom="16dp" />
-
-    <ImageView
-        android:id="@+id/imgCartMenu"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:scaleType="centerCrop"
         android:layout_marginBottom="12dp" />
 
-    <TextView
-        android:id="@+id/tvCartItemName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nama Item"
-        android:textSize="18sp"
-        android:textColor="#3E2723" />
+    <!-- LIST PESANAN -->
+    <ListView
+        android:id="@+id/listCart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="8dp"/>
 
-    <TextView
-        android:id="@+id/tvCartItemPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rp 0"
-        android:textSize="16sp"
-        android:layout_marginTop="4dp"
-        android:textColor="#3E2723" />
-
+    <!-- TOTAL -->
     <TextView
         android:id="@+id/tvTotalPrice"
         android:layout_width="wrap_content"
@@ -46,23 +31,23 @@
         android:text="Total: Rp 0"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:textColor="#6F4E37" />
+        android:textColor="#6F4E37"
+        android:layout_marginTop="12dp"/>
 
     <Button
         android:id="@+id/btnCheckout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Checkout"
-        android:layout_marginTop="24dp"
         android:backgroundTint="#6F4E37"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="12dp"/>
 
     <Button
         android:id="@+id/btnBackCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Kembali"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"/>
 
 </LinearLayout>

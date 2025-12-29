@@ -15,7 +15,7 @@ class CustomerOrderActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.rvCustomerOrders)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // DUMMY ORDER DARI MENU KAMU
+
         val orderList = listOf(
             OrderItem("Espresso", 12000, "Diproses"),
             OrderItem("Cappuccino", 15000, "Selesai"),
