@@ -5,13 +5,13 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center"
-    android:background="#FFF3E0">
+    android:background="@drawable/bgdua">
 
     <TextView
         android:text="Register MyCoffeeQuins"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:textColor="#6F4E37"
+        android:textColor="#FFFFFF"
         android:layout_marginBottom="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -52,6 +52,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sudah punya akun? Login"
-        android:textColor="#6F4E37"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="16dp"/>
 </LinearLayout>

@@ -1,61 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp"
     android:gravity="center"
-    android:background="#FFF3E0">
+    android:padding="24dp"
+    android:background="@drawable/bgsatu">
 
+    <!-- JUDUL -->
     <TextView
-        android:text="MyCoffeeQuins"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#5D4037"
-        android:layout_marginBottom="32dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="MyCoffeeQuins"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="36dp" />
 
+    <!-- EMAIL -->
     <EditText
         android:id="@+id/etEmail"
-        android:hint="Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"/>
+        android:hint="Email"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:inputType="textEmailAddress" />
 
+    <!-- PASSWORD -->
     <EditText
         android:id="@+id/etPassword"
-        android:hint="Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Password"
+        android:padding="12dp"
         android:layout_marginTop="12dp"
-        android:inputType="textPassword"/>
+        android:background="@android:drawable/edit_text"
+        android:inputType="textPassword" />
 
+    <!-- LOGIN CUSTOMER -->
     <Button
         android:id="@+id/btnLoginCustomer"
-        android:text="Login Customer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Login Customer"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#6D4C41"/>
+        android:backgroundTint="#6D4C41"
+        android:textColor="@android:color/white" />
 
     <!-- REGISTER -->
     <Button
         android:id="@+id/btnRegister"
-        android:text="Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Register"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#8D6E63"/>
+        android:backgroundTint="#8D6E63"
+        android:textColor="@android:color/white" />
 
     <!-- LOGIN KASIR -->
     <TextView
         android:id="@+id/tvLoginKasir"
-        android:text="Login sebagai Kasir"
-        android:textColor="#3E2723"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Login sebagai Kasir"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_marginTop="28dp" />
+
 </LinearLayout>

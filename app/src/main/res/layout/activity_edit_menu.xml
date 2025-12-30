@@ -11,12 +11,13 @@
         android:padding="24dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Edit Menu"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#6F4E37"
+            android:gravity="center"
             android:layout_marginBottom="24dp"/>
 
         <ImageView
@@ -28,24 +29,33 @@
 
         <EditText
             android:id="@+id/etMenuName"
+            android:hint="Nama Menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Menu"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/etMenuDesc"
+            android:hint="Deskripsi Menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="3"
+            android:gravity="top"
             android:layout_marginBottom="12dp"/>
 
         <EditText
             android:id="@+id/etMenuPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:hint="Harga"
             android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"/>
 
         <Button
             android:id="@+id/btnSaveMenu"
+            android:text="Simpan Perubahan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Simpan Perubahan"
             android:backgroundTint="#6F4E37"
             android:textColor="#FFFFFF"/>
     </LinearLayout>

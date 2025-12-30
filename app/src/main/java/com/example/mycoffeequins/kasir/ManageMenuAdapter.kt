@@ -37,6 +37,7 @@ class ManageMenuAdapter(
             val intent = Intent(holder.itemView.context, EditMenuActivity::class.java)
             intent.putExtra("name", item.name)
             intent.putExtra("price", item.price)
+            intent.putExtra("desc", item.description)
             intent.putExtra("imageRes", item.imageRes)
             holder.itemView.context.startActivity(intent)
         }

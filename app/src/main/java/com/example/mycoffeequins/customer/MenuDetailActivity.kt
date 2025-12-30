@@ -2,9 +2,7 @@ package com.example.mycoffeequins.customer
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mycoffeequins.R
 
@@ -21,7 +19,6 @@ class MenuDetailActivity : AppCompatActivity() {
         val btnAdd = findViewById<Button>(R.id.btnAddCart)
         val btnBack = findViewById<Button>(R.id.btnBack)
 
-        // Terima data dari MenuList
         val name = intent.getStringExtra("name") ?: ""
         val desc = intent.getStringExtra("desc") ?: ""
         val price = intent.getIntExtra("price", 0)
@@ -32,13 +29,9 @@ class MenuDetailActivity : AppCompatActivity() {
         tvPrice.text = "Rp $price"
         imgMenu.setImageResource(image)
 
-        // KIRIM KE CART (REAL DATA)
         btnAdd.setOnClickListener {
-            val intent = Intent(this, CartActivity::class.java)
-            intent.putExtra("name", name)
-            intent.putExtra("price", price)
-            intent.putExtra("image", image)
-            startActivity(intent)
+            Toast.makeText(this, "$name ditambahkan ke keranjang", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, CartActivity::class.java))
         }
 
         btnBack.setOnClickListener {

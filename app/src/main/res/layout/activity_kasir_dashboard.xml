@@ -4,40 +4,61 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
+    android:gravity="center_horizontal"
     android:background="#FFF8F0">
 
+    <!-- JUDUL -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dashboard Kasir"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="#6F4E37"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginBottom="6dp"
+        android:gravity="center"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kelola pesanan dan menu"
+        android:textSize="14sp"
+        android:textColor="#8D6E63"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"/>
+
+    <!-- TOMBOL LIHAT PESANAN -->
     <Button
         android:id="@+id/btnOrderList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="📦 Lihat Pesanan"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:backgroundTint="#6F4E37"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="20dp"/>
 
+    <!-- TOMBOL KELOLA MENU -->
     <Button
         android:id="@+id/btnManageMenu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:text="☕ Kelola Menu"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:backgroundTint="#8D6E63"
         android:textColor="#FFFFFF"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="20dp"/>
 
+    <!-- LOGOUT -->
     <Button
         android:id="@+id/btnLogoutKasir"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:text="Logout"
+        android:textSize="14sp"
+        android:textStyle="bold"
         android:backgroundTint="#D32F2F"
         android:textColor="#FFFFFF"/>
 </LinearLayout>

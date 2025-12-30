@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D0BCA7">
+    android:background="#D1C4B8"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:padding="24dp">
 
         <!-- HEADER -->
@@ -19,7 +21,8 @@
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="#6F4E37"
-            android:layout_gravity="center_horizontal" />
+            android:gravity="center"
+            android:layout_marginBottom="4dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,16 +30,8 @@
             android:text="D'coffee by Quinsfashioncake"
             android:textSize="16sp"
             android:textColor="#6F4E37"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="24dp" />
-
-        <!-- BANNER PROMO -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@drawable/banner"
-            android:scaleType="centerCrop"
-            android:layout_marginBottom="24dp" />
+            android:gravity="center"
+            android:layout_marginBottom="32dp"/>
 
         <!-- GRID MENU -->
         <GridLayout
@@ -44,7 +39,8 @@
             android:layout_height="wrap_content"
             android:columnCount="2"
             android:alignmentMode="alignMargins"
-            android:useDefaultMargins="false">
+            android:useDefaultMargins="false"
+            android:layout_gravity="center">
 
             <!-- LIHAT MENU -->
             <androidx.cardview.widget.CardView
@@ -52,8 +48,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="14dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="#6F4E37"
                 android:clickable="true"
@@ -66,7 +62,7 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"/>
             </androidx.cardview.widget.CardView>
 
             <!-- KERANJANG -->
@@ -75,8 +71,8 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="14dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="#6F4E37"
                 android:clickable="true"
@@ -89,17 +85,17 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"/>
             </androidx.cardview.widget.CardView>
 
-            <!-- PESANAN SAYA -->
+            <!-- PESANAN -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardOrders"
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="14dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
                 app:cardBackgroundColor="#6F4E37"
                 android:clickable="true"
@@ -112,7 +108,7 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"/>
             </androidx.cardview.widget.CardView>
 
             <!-- LOGOUT -->
@@ -121,10 +117,10 @@
                 android:layout_width="0dp"
                 android:layout_height="120dp"
                 android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="14dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="6dp"
-                app:cardBackgroundColor="#6F4E37"
+                app:cardBackgroundColor="#891919"
                 android:clickable="true"
                 android:focusable="true">
 
@@ -135,7 +131,7 @@
                     android:gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"/>
             </androidx.cardview.widget.CardView>
 
         </GridLayout>

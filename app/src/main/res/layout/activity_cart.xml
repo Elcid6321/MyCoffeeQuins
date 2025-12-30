@@ -3,51 +3,72 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="20dp"
     android:background="#FFF8F0">
 
+    <!-- JUDUL -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Keranjang"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#6F4E37"
-        android:layout_marginBottom="12dp" />
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
-    <!-- LIST PESANAN -->
+    <!-- PESAN KOSONG -->
+    <TextView
+        android:id="@+id/tvEmptyCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keranjang masih kosong"
+        android:textSize="16sp"
+        android:textColor="#8D6E63"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- LIST KERANJANG -->
     <ListView
         android:id="@+id/listCart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:dividerHeight="8dp"/>
+        android:dividerHeight="8dp"
+        android:paddingBottom="8dp" />
 
     <!-- TOTAL -->
     <TextView
         android:id="@+id/tvTotalPrice"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total: Rp 0"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#6F4E37"
-        android:layout_marginTop="12dp"/>
+        android:gravity="end"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp" />
 
+    <!-- CHECKOUT -->
     <Button
         android:id="@+id/btnCheckout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Checkout"
+        android:textStyle="bold"
         android:backgroundTint="#6F4E37"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginBottom="8dp" />
 
+    <!-- KEMBALI -->
     <Button
         android:id="@+id/btnBackCart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kembali"
-        android:layout_marginTop="8dp"/>
+        android:backgroundTint="#5D3520"
+        android:text="Kembali" />
 
 </LinearLayout>

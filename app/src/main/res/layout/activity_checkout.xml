@@ -3,77 +3,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="20dp"
     android:background="#FFF8F0">
 
+    <!-- JUDUL -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Checkout"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="#6F4E37"
-        android:layout_marginBottom="16dp" />
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
 
+    <!-- TOTAL BAYAR -->
     <TextView
         android:id="@+id/tvCheckoutTotal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total Bayar: Rp 0"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#3E2723"
-        android:layout_marginBottom="16dp" />
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
 
+    <!-- METODE PEMBAYARAN -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Metode Pembayaran"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#6F4E37"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="12dp" />
 
     <RadioGroup
         android:id="@+id/radioPayment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
 
         <RadioButton
             android:id="@+id/radioCash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cash" />
+            android:text="Cash"
+            android:layout_marginBottom="6dp"/>
 
         <RadioButton
             android:id="@+id/radioQris"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="QRIS" />
+            android:text="QRIS"
+            android:layout_marginBottom="6dp"/>
 
         <RadioButton
             android:id="@+id/radioEwallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="E-Wallet" />
+            android:text="E-Wallet"/>
     </RadioGroup>
 
+    <!-- TOMBOL BAYAR -->
     <Button
         android:id="@+id/btnPay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bayar Sekarang"
-        android:layout_marginTop="24dp"
+        android:textStyle="bold"
         android:backgroundTint="#6F4E37"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp" />
 
+    <!-- TOMBOL KEMBALI -->
     <Button
         android:id="@+id/btnBackCheckout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kembali"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#6F4E37"
-        android:textColor="#FFFFFF"/>
+        android:backgroundTint="#5D3520"
+        android:text="Kembali" />
 
 </LinearLayout>

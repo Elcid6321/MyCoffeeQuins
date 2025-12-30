@@ -3,20 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="20dp"
     android:background="#FFF8F0">
 
+    <!-- Judul -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Kelola Menu"
-        android:textSize="22sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#6F4E37"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Divider tipis -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D7CCC8"
         android:layout_marginBottom="16dp"/>
 
+    <!-- List Menu -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvManageMenu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"/>
 </LinearLayout>
