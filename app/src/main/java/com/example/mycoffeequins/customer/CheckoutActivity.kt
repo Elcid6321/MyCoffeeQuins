@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioButton
-import android.widget.RadioGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,31 +11,45 @@ import com.example.mycoffeequins.R
 
 class CheckoutActivity : AppCompatActivity() {
 
+    private lateinit var radioCash: RadioButton
+    private lateinit var radioQris: RadioButton
+    private lateinit var radioEwallet: RadioButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
 
         val tvTotal = findViewById<TextView>(R.id.tvCheckoutTotal)
-        val radioGroup = findViewById<RadioGroup>(R.id.radioPayment)
         val btnPay = findViewById<Button>(R.id.btnPay)
         val btnBack = findViewById<Button>(R.id.btnBackCheckout)
 
-        // Terima total dari Cart
+        radioCash = findViewById(R.id.radioCash)
+        radioQris = findViewById(R.id.radioQris)
+        radioEwallet = findViewById(R.id.radioEwallet)
+
+        // Terima total dari cart
         val total = intent.getIntExtra("total", 0)
         tvTotal.text = "Total Bayar: Rp $total"
 
-        btnPay.setOnClickListener {
-            val selectedId = radioGroup.checkedRadioButtonId
+        // HANDLE RADIO BUTTON MANUAL
+        radioCash.setOnClickListener { selectPayment(radioCash) }
+        radioQris.setOnClickListener { selectPayment(radioQris) }
+        radioEwallet.setOnClickListener { selectPayment(radioEwallet) }
 
-            if (selectedId == -1) {
+        btnPay.setOnClickListener {
+            val selectedPayment = when {
+                radioCash.isChecked -> radioCash.text.toString()
+                radioQris.isChecked -> radioQris.text.toString()
+                radioEwallet.isChecked -> radioEwallet.text.toString()
+                else -> null
+            }
+
+            if (selectedPayment == null) {
                 Toast.makeText(this, "Pilih metode pembayaran", Toast.LENGTH_SHORT).show()
             } else {
-                val selectedRadio = findViewById<RadioButton>(selectedId)
-                val paymentMethod = selectedRadio.text.toString()
-
                 val intent = Intent(this, OrderSuccessActivity::class.java)
                 intent.putExtra("total", total)
-                intent.putExtra("payment", paymentMethod)
+                intent.putExtra("payment", selectedPayment)
                 startActivity(intent)
                 finish()
             }
@@ -45,5 +58,11 @@ class CheckoutActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             finish()
         }
+    }
+
+    private fun selectPayment(selected: RadioButton) {
+        radioCash.isChecked = selected == radioCash
+        radioQris.isChecked = selected == radioQris
+        radioEwallet.isChecked = selected == radioEwallet
     }
 }

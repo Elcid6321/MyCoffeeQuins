@@ -17,7 +17,7 @@
 
         <!-- Image -->
         <ImageView
-            android:id="@+id/imgOrder"
+            android:id="@+id/imgItem"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:scaleType="centerCrop"
@@ -33,7 +33,7 @@
             android:layout_marginStart="12dp">
 
             <TextView
-                android:id="@+id/tvOrderName"
+                android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cappuccino"
@@ -42,16 +42,16 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvOrderSubtitle"
+                android:id="@+id/tvSubtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Qty 1"
+                android:text="Coffee: cormemove"
                 android:textColor="#555555"
                 android:textSize="14sp"
                 android:layout_marginTop="4dp" />
 
             <TextView
-                android:id="@+id/tvOrderPrice"
+                android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rp 20.000"
@@ -59,15 +59,35 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Quantity + Remove -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
 
             <TextView
-                android:id="@+id/tvOrderStatus"
+                android:id="@+id/tvQty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diproses"
-                android:textColor="#6F4E37"
+                android:text="1"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remove"
+                android:textColor="#D32F2F"
                 android:textSize="14sp"
-                android:layout_marginTop="6dp" />
+                android:padding="4dp" />
         </LinearLayout>
 
     </LinearLayout>

@@ -2,10 +2,13 @@ package com.example.mycoffeequins.customer
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.*
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mycoffeequins.R
 import com.example.mycoffeequins.kasir.LoginKasirActivity
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 
 class LoginCustomerActivity : AppCompatActivity() {
 
@@ -13,14 +16,19 @@ class LoginCustomerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_customer)
 
-        val etEmail = findViewById<EditText>(R.id.etEmail)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
+        // Input fields (TextInputEditText di dalam TextInputLayout)
+        val etEmail: TextInputEditText = findViewById(R.id.et_email)
+        val etPassword: TextInputEditText = findViewById(R.id.et_password)
 
-        val btnLogin = findViewById<Button>(R.id.btnLoginCustomer)
-        val btnRegister = findViewById<Button>(R.id.btnRegister)
-        val tvLoginKasir = findViewById<TextView>(R.id.tvLoginKasir)
+        // Button Sign In (coklat tua)
+        val btnSignIn: MaterialButton = findViewById(R.id.btn_sign_in)
 
-        btnLogin.setOnClickListener {
+        // Clickable texts (semua TextView sekarang)
+        val tvCreateAccount: TextView = findViewById(R.id.tv_create_account)
+        val tvLoginKasir: TextView = findViewById(R.id.tv_login_kasir)
+
+        // Login Customer
+        btnSignIn.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
@@ -29,19 +37,20 @@ class LoginCustomerActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // LANGSUNG LOGIN TANPA CEK EMAIL/PASSWORD
-            Toast.makeText(this, "Login berhasil", Toast.LENGTH_SHORT).show()
+            // Langsung login sukses (seperti sebelumnya)
+            Toast.makeText(this, "Login berhasil ☕", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, CustomerDashboardActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        // KE REGISTER
-        btnRegister.setOnClickListener {
+
+        // Create account
+        tvCreateAccount.setOnClickListener {
             startActivity(Intent(this, RegisterCustomerActivity::class.java))
         }
 
-        // LOGIN KASIR
+        // Login sebagai Kasir
         tvLoginKasir.setOnClickListener {
             startActivity(Intent(this, LoginKasirActivity::class.java))
         }

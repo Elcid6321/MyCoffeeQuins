@@ -1,88 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:background="#FFF8F0">
+    android:background="@drawable/bgdashboard"
+    android:padding="16dp">
 
-    <!-- JUDUL -->
+
+    <!-- Judul -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvMainTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Checkout"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#6F4E37"
+        android:layout_marginTop="30dp"
         android:gravity="center"
-        android:layout_marginBottom="20dp" />
+        android:text="Checkout Total"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBack" />
 
-    <!-- TOTAL BAYAR -->
+    <!-- Total Bayar -->
     <TextView
         android:id="@+id/tvCheckoutTotal"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Bayar: Rp 0"
-        android:textSize="18sp"
+        android:text="Bayar: Rp 0"
+        android:textSize="22sp"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:textColor="#3E2723"
-        android:gravity="center"
-        android:layout_marginBottom="24dp" />
+        app:layout_constraintTop_toBottomOf="@id/tvMainTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
 
-    <!-- METODE PEMBAYARAN -->
+    <!-- Label -->
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvPaymentLabel"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Metode Pembayaran"
-        android:textSize="16sp"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:textColor="#6F4E37"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/tvCheckoutTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Radio Group -->
     <RadioGroup
         android:id="@+id/radioPayment"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp">
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvPaymentLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <RadioButton
-            android:id="@+id/radioCash"
-            android:layout_width="wrap_content"
+        <!-- CASH -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cash"
-            android:layout_marginBottom="6dp"/>
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            android:layout_marginBottom="12dp">
 
-        <RadioButton
-            android:id="@+id/radioQris"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="QRIS"
-            android:layout_marginBottom="6dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
 
-        <RadioButton
-            android:id="@+id/radioEwallet"
-            android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/duit"
+                    android:tint="#000000"/>
+
+                <RadioButton
+                    android:id="@+id/radioCash"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Cash"
+                    android:textColor="#000000"
+                    android:buttonTint="#4CAF50"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- QRIS -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="E-Wallet"/>
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/kris"
+                    android:tint="#000000"/>
+
+                <RadioButton
+                    android:id="@+id/radioQris"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="QRIS"
+                    android:textColor="#000000"
+                    android:buttonTint="#4CAF50"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- E-WALLET -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/dompet"
+                    android:tint="#000000"/>
+
+                <RadioButton
+                    android:id="@+id/radioEwallet"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="E-Wallet"
+                    android:textColor="#000000"
+                    android:buttonTint="#4CAF50"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </RadioGroup>
 
-    <!-- TOMBOL BAYAR -->
-    <Button
-        android:id="@+id/btnPay"
-        android:layout_width="match_parent"
+    <!-- Tombol -->
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Bayar Sekarang"
-        android:textStyle="bold"
-        android:backgroundTint="#6F4E37"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="10dp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/radioPayment"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- TOMBOL KEMBALI -->
-    <Button
-        android:id="@+id/btnBackCheckout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#5D3520"
-        android:text="Kembali" />
+        <Button
+            android:id="@+id/btnBackCheckout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="52dp"
+            android:text="Kembali"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#5D4037"
+            android:textAllCaps="false"
+            android:layout_marginEnd="12dp"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnPay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="52dp"
+            android:text="Bayar Sekarang"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

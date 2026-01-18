@@ -1,74 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp"
     android:background="@drawable/bgsatu">
 
-    <!-- JUDUL -->
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- MaterialCardView sebagai kotak hitam semi-transparan -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_login"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="MyCoffeeQuins"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="36dp" />
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="#CC000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- EMAIL -->
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:padding="12dp"
-        android:background="@android:drawable/edit_text"
-        android:inputType="textEmailAddress" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
 
-    <!-- PASSWORD -->
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:padding="12dp"
-        android:layout_marginTop="12dp"
-        android:background="@android:drawable/edit_text"
-        android:inputType="textPassword" />
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/logo"
+                android:contentDescription="Logo MyCoffeeQuins" />
 
-    <!-- LOGIN CUSTOMER -->
-    <Button
-        android:id="@+id/btnLoginCustomer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login Customer"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#6D4C41"
-        android:textColor="@android:color/white" />
+            <!-- Welcome Text (putih) -->
+            <TextView
+                android:id="@+id/tv_welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:text="Welcome back,"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="#FFFFFF" />
 
-    <!-- REGISTER -->
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#8D6E63"
-        android:textColor="@android:color/white" />
+            <!-- App Name: MyCoffeeQuins (split biar Coffee coklat) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
 
-    <!-- LOGIN KASIR -->
-    <TextView
-        android:id="@+id/tvLoginKasir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login sebagai Kasir"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        android:layout_marginTop="28dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="My"
+                    android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coffee"
+                    android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                    android:textStyle="bold"
+                    android:textColor="#6D4C41" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quins"
+                    android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- Email Field -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_email"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:textColorHint="#B3FFFFFF"
+            app:boxStrokeColor="#FFFFFF"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:hintTextColor="#B3FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:hint="Username or email"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_password"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColorHint="#B3FFFFFF"
+            app:boxStrokeColor="#FFFFFF"
+            app:endIconMode="password_toggle"
+            app:endIconTint="#FFFFFF"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            app:hintTextColor="#B3FFFFFF">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:hint="Password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Sign In Button (coklat tua) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:text="Sign in"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="28dp"
+            app:icon="@drawable/biji"
+            app:iconGravity="textStart"
+            app:iconPadding="16dp"
+            app:backgroundTint="#5D4037"
+            app:iconTint="@null" />
+
+        <!-- Create Account (putih) -->
+        <TextView
+            android:id="@+id/tv_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:text="Create account"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
+
+    <!-- Login sebagai Kasir (putih, di luar card) -->
+<TextView
+android:id="@+id/tv_login_kasir"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="32dp"
+android:text="Login sebagai Kasir"
+android:textColor="#FFFFFF"
+android:textStyle="bold"
+android:textSize="16sp"
+android:clickable="true"
+android:focusable="true"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

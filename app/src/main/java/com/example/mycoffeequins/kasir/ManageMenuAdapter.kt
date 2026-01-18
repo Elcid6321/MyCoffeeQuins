@@ -15,9 +15,9 @@ class ManageMenuAdapter(
 ) : RecyclerView.Adapter<ManageMenuAdapter.MenuViewHolder>() {
 
     class MenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivMenu: ImageView = itemView.findViewById(R.id.ivMenu)
-        val tvName: TextView = itemView.findViewById(R.id.tvName)
-        val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
+        val ivMenu: ImageView = itemView.findViewById(R.id.ivMenuImage)
+        val tvName: TextView = itemView.findViewById(R.id.tvMenuName)
+        val tvPrice: TextView = itemView.findViewById(R.id.tvMenuPrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {

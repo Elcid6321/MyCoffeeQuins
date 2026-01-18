@@ -1,4 +1,4 @@
-package com.example.mycoffeequins.customer
+package com.example.mycoffeequins.model
 
 data class MenuItem(
     val name: String,

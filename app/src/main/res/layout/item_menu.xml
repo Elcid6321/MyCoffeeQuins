@@ -1,53 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
-    android:layout_marginBottom="12dp"
-    card_view:cardCornerRadius="12dp"
-    card_view:cardElevation="4dp"
-    card_view:cardBackgroundColor="#FFF3E0">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardBackgroundColor="#5D4037"
+    app:rippleColor="#4E342E"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:padding="8dp">
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:paddingBottom="12dp">
 
-        <ImageView
-            android:id="@+id/ivMenu"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground" />
+<!-- Foto Menu -->
+<ImageView
+    android:id="@+id/ivMenuImage"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:scaleType="centerCrop"
+    android:contentDescription="Foto Menu" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingStart="12dp"
-            android:gravity="center_vertical">
+<!-- Nama Menu -->
+<TextView
+    android:id="@+id/tvMenuName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Nama Menu"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="#FFFFFF"
+    android:gravity="center"
+    android:paddingTop="12dp"
+    android:paddingHorizontal="8dp" />
 
-            <TextView
-                android:id="@+id/tvName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Menu Name"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#6F4E37" />
+<!-- Deskripsi Panjang -->
+<TextView
+    android:id="@+id/tvMenuDescription"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Deskripsi panjang menu ini, bisa 2-4 baris biar lebih informatif. Contoh: kopi ini dibuat dari biji pilihan Arabika dari dataran tinggi, roasted medium untuk rasa balanced."
+    android:textSize="14sp"
+    android:textColor="#E0E0E0"
+    android:paddingHorizontal="12dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="8dp"
+    android:maxLines="4"
+    android:ellipsize="end"
+    android:lineSpacingExtra="2dp" />
 
-            <TextView
-                android:id="@+id/tvPrice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rp 0"
-                android:textSize="16sp"
-                android:textColor="#6F4E37"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
+<!-- Harga (kuning emas biar standout) -->
+<TextView
+    android:id="@+id/tvMenuPrice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Rp 15.000"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="#FFD700"
+android:gravity="center"
+android:paddingTop="4dp" />
 
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>
+    </com.google.android.material.card.MaterialCardView>

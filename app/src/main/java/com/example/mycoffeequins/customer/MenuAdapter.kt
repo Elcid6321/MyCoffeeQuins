@@ -13,9 +13,10 @@ class MenuAdapter(private val menuList: List<MenuItem>) :
     RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
     class MenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivMenu: ImageView = itemView.findViewById(R.id.ivMenu)
-        val tvName: TextView = itemView.findViewById(R.id.tvName)
-        val tvPrice: TextView = itemView.findViewById(R.id.tvPrice)
+        val ivMenuImage: ImageView = itemView.findViewById(R.id.ivMenuImage)
+        val tvMenuName: TextView = itemView.findViewById(R.id.tvMenuName)
+        val tvMenuDescription: TextView = itemView.findViewById(R.id.tvMenuDescription)
+        val tvMenuPrice: TextView = itemView.findViewById(R.id.tvMenuPrice)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
@@ -27,18 +28,18 @@ class MenuAdapter(private val menuList: List<MenuItem>) :
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
         val item = menuList[position]
 
-        holder.tvName.text = item.name
-        holder.tvPrice.text = "Rp ${item.price}"
-        holder.ivMenu.setImageResource(item.imageRes)
+        holder.ivMenuImage.setImageResource(item.imageRes)
+        holder.tvMenuName.text = item.name
+        holder.tvMenuDescription.text = item.description
+        holder.tvMenuPrice.text = "Rp ${item.price}"
 
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, MenuDetailActivity::class.java)
+            val intent = Intent(holder.itemView.context, MenuDetailActivity::class.java)
             intent.putExtra("name", item.name)
             intent.putExtra("desc", item.description)
             intent.putExtra("price", item.price)
             intent.putExtra("image", item.imageRes)
-            context.startActivity(intent)
+            holder.itemView.context.startActivity(intent)
         }
     }
 

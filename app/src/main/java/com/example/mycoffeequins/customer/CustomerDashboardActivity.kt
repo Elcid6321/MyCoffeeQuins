@@ -3,8 +3,9 @@ package com.example.mycoffeequins.customer
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import com.example.mycoffeequins.R
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
 
 class CustomerDashboardActivity : AppCompatActivity() {
 
@@ -12,29 +13,21 @@ class CustomerDashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_dashboard)
 
-        val cardMenu = findViewById<CardView>(R.id.cardMenu)
-        val cardCart = findViewById<CardView>(R.id.cardCart)
-        val cardOrders = findViewById<CardView>(R.id.cardOrders)
-        val cardLogout = findViewById<CardView>(R.id.cardLogout)
-
-        cardMenu.setOnClickListener {
+        findViewById<MaterialCardView>(R.id.cardMenu).setOnClickListener {
             startActivity(Intent(this, MenuListActivity::class.java))
         }
 
-        cardCart.setOnClickListener {
+        findViewById<MaterialCardView>(R.id.cardCart).setOnClickListener {
             startActivity(Intent(this, CartActivity::class.java))
         }
 
-        cardOrders.setOnClickListener {
-            startActivity(
-                Intent(this, CustomerOrderActivity::class.java)
-            )
+        findViewById<MaterialCardView>(R.id.cardOrders).setOnClickListener {
+            startActivity(Intent(this, CustomerOrderActivity::class.java))
         }
 
-        cardLogout.setOnClickListener {
-            startActivity(
-                Intent(this, LoginCustomerActivity::class.java)
-            )
+        findViewById<MaterialButton>(R.id.btnLogout).setOnClickListener {
+            startActivity(Intent(this, LoginCustomerActivity::class.java))
+            finish()  // optional: finish biar ga balik ke dashboard pas back
         }
     }
 }
