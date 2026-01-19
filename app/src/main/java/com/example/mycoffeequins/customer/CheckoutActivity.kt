@@ -2,12 +2,12 @@ package com.example.mycoffeequins.customer
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.RadioButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mycoffeequins.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.text.NumberFormat
+import java.util.Locale
 
 class CheckoutActivity : AppCompatActivity() {
 
@@ -22,25 +22,27 @@ class CheckoutActivity : AppCompatActivity() {
         val tvTotal = findViewById<TextView>(R.id.tvCheckoutTotal)
         val btnPay = findViewById<Button>(R.id.btnPay)
         val btnBack = findViewById<Button>(R.id.btnBackCheckout)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
         radioCash = findViewById(R.id.radioCash)
         radioQris = findViewById(R.id.radioQris)
         radioEwallet = findViewById(R.id.radioEwallet)
 
-        // Terima total dari cart
+        // ===== TERIMA TOTAL =====
         val total = intent.getIntExtra("total", 0)
-        tvTotal.text = "Total Bayar: Rp $total"
+        tvTotal.text = "Total Bayar: ${formatRupiah(total)}"
 
-        // HANDLE RADIO BUTTON MANUAL
+        // ===== RADIO =====
         radioCash.setOnClickListener { selectPayment(radioCash) }
         radioQris.setOnClickListener { selectPayment(radioQris) }
         radioEwallet.setOnClickListener { selectPayment(radioEwallet) }
 
+        // ===== PAY =====
         btnPay.setOnClickListener {
             val selectedPayment = when {
-                radioCash.isChecked -> radioCash.text.toString()
-                radioQris.isChecked -> radioQris.text.toString()
-                radioEwallet.isChecked -> radioEwallet.text.toString()
+                radioCash.isChecked -> "Cash"
+                radioQris.isChecked -> "QRIS"
+                radioEwallet.isChecked -> "E-Wallet"
                 else -> null
             }
 
@@ -55,8 +57,29 @@ class CheckoutActivity : AppCompatActivity() {
             }
         }
 
-        btnBack.setOnClickListener {
-            finish()
+        btnBack.setOnClickListener { finish() }
+
+        // ===== BOTTOM NAV =====
+        bottomNav.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_dashboard -> {
+                    startActivity(Intent(this, CustomerDashboardActivity::class.java))
+                    true
+                }
+                R.id.nav_cart -> {
+                    startActivity(Intent(this, CartActivity::class.java))
+                    true
+                }
+                R.id.nav_orders -> {
+                    startActivity(Intent(this, CustomerOrderActivity::class.java))
+                    true
+                }
+                R.id.nav_profile -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                    true
+                }
+                else -> false
+            }
         }
     }
 
@@ -64,5 +87,12 @@ class CheckoutActivity : AppCompatActivity() {
         radioCash.isChecked = selected == radioCash
         radioQris.isChecked = selected == radioQris
         radioEwallet.isChecked = selected == radioEwallet
+    }
+
+    private fun formatRupiah(amount: Int): String {
+        val localeID = Locale("in", "ID")
+        val formatter = NumberFormat.getCurrencyInstance(localeID)
+        formatter.maximumFractionDigits = 0
+        return formatter.format(amount)
     }
 }

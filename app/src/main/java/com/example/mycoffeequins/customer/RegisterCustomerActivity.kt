@@ -26,6 +26,18 @@ class RegisterCustomerActivity : AppCompatActivity() {
             if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Semua data wajib diisi", Toast.LENGTH_SHORT).show()
             } else {
+
+                // SIMPAN DATA KE SharedPreferences
+                val prefs = getSharedPreferences("user_prefs", MODE_PRIVATE)
+                prefs.edit().apply {
+                    putString("user_name", name)
+                    putString("user_email", email)
+                    putString("user_password", password)
+                    putString("user_phone", "+62 xxxx")   // default
+                    putString("user_bio", "Bio user...") // default
+                    apply()
+                }
+
                 Toast.makeText(this, "Register berhasil, silakan login", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, LoginCustomerActivity::class.java))
                 finish()

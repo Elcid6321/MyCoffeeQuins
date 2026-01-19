@@ -2,9 +2,10 @@ package com.example.mycoffeequins.customer
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mycoffeequins.R
-import com.google.android.material.button.MaterialButton
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.card.MaterialCardView
 
 class CustomerDashboardActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class CustomerDashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_dashboard)
 
+        // ===== CARD CLICK =====
         findViewById<MaterialCardView>(R.id.cardMenu).setOnClickListener {
             startActivity(Intent(this, MenuListActivity::class.java))
         }
@@ -25,9 +27,45 @@ class CustomerDashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, CustomerOrderActivity::class.java))
         }
 
-        findViewById<MaterialButton>(R.id.btnLogout).setOnClickListener {
-            startActivity(Intent(this, LoginCustomerActivity::class.java))
-            finish()  // optional: finish biar ga balik ke dashboard pas back
+        findViewById<ImageView>(R.id.imgProfileIcon).setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
+        // ===== BOTTOM NAV =====
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+
+        // 🔥 SET MENU AKTIF
+        bottomNav.selectedItemId = R.id.nav_dashboard
+
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+
+                // ✅ HALAMAN INI (JANGAN PINDAH)
+                R.id.nav_dashboard -> true
+
+                R.id.nav_cart -> {
+                    startActivity(Intent(this, CartActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+
+                R.id.nav_orders -> {
+                    startActivity(Intent(this, CustomerOrderActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+
+                R.id.nav_profile -> {
+                    startActivity(Intent(this, ProfileActivity::class.java))
+                    overridePendingTransition(0, 0)
+                    finish()
+                    true
+                }
+
+                else -> false
+            }
         }
     }
 }

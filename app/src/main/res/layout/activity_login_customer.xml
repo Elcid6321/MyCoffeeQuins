@@ -162,20 +162,4 @@
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
 
-    <!-- Login sebagai Kasir (putih, di luar card) -->
-<TextView
-android:id="@+id/tv_login_kasir"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_marginBottom="32dp"
-android:text="Login sebagai Kasir"
-android:textColor="#FFFFFF"
-android:textStyle="bold"
-android:textSize="16sp"
-android:clickable="true"
-android:focusable="true"
-app:layout_constraintBottom_toBottomOf="parent"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintEnd_toEndOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
